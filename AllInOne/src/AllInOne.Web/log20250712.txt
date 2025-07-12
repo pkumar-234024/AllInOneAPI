@@ -1,0 +1,499 @@
+2025-07-12 16:28:36.941 +05:30 [INF] Registered 10 endpoints in 453 milliseconds.
+2025-07-12 16:28:37.727 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-07-12 16:28:37.948 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-07-12 16:28:38.116 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 7), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-07-12 16:28:38.134 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 8), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-07-12 16:28:38.345 +05:30 [INF] Now listening on: https://localhost:57679
+2025-07-12 16:28:38.353 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-12 16:28:38.424 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-12 16:28:38.425 +05:30 [INF] Hosting environment: Development
+2025-07-12 16:28:38.426 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-07-12 16:28:49.514 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:28:49.678 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 167.8586ms
+2025-07-12 16:28:49.694 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:28:49.694 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:28:49.712 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 19.0929ms
+2025-07-12 16:28:49.746 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.1758ms
+2025-07-12 16:28:49.969 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:28:50.024 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 55.6939ms
+2025-07-12 16:28:56.506 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:28:56.513 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:28:56.545 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:28:56.607 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:28:56.612 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 65 ms
+2025-07-12 16:28:56.616 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:28:56.622 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 404 null null 116.3632ms
+2025-07-12 16:29:15.217 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:29:15.220 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:29:18.541 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:29:18.581 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:29:18.584 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 41 ms
+2025-07-12 16:29:56.943 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:29:57.033 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 404 null null 41788.6751ms
+2025-07-12 16:30:36.928 +05:30 [INF] Request starting HTTP/2 POST https://localhost:57679/AiTools/create - application/json 116
+2025-07-12 16:30:36.940 +05:30 [INF] Executing endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:30:36.976 +05:30 [INF] Executed endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:30:36.977 +05:30 [INF] Request finished HTTP/2 POST https://localhost:57679/AiTools/create - 400 null application/problem+json; charset=utf-8 48.6947ms
+2025-07-12 16:30:57.449 +05:30 [INF] Request starting HTTP/2 POST https://localhost:57679/AiTools/create - application/json 112
+2025-07-12 16:30:57.481 +05:30 [INF] Executing endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:31:11.634 +05:30 [INF] Handling CreateAiToolCommand
+2025-07-12 16:31:11.637 +05:30 [INF] Property aiToolCreateDto : {"Name":"Aitool1","Description":"tool1","Image":null,"ImagePath":"l/a/","ToolUrl":"string","$type":"AiToolCreateDto"}
+2025-07-12 16:31:15.803 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 5), @p3='?' (DbType = Binary), @p4='?' (Size = 4), @p5='?' (Size = 7), @p6='?' (Size = 6), @p7='?', @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AiToolModels" ("CreatedBy", "CreatedDate", "Description", "Image", "ImagePath", "Name", "ToolUrl", "UpdatedBy", "UpdatedDate")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2025-07-12 16:31:21.690 +05:30 [INF] Handled CreateAiToolCommand with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithoutId] in 10044 ms
+2025-07-12 16:31:21.693 +05:30 [INF] Executed endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:31:21.700 +05:30 [INF] Request finished HTTP/2 POST https://localhost:57679/AiTools/create - 200 null application/json; charset=utf-8 24252.2998ms
+2025-07-12 16:31:45.719 +05:30 [INF] Request starting HTTP/2 POST https://localhost:57679/AiTools/create - application/json 113
+2025-07-12 16:31:45.723 +05:30 [INF] Executing endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:31:48.672 +05:30 [INF] Handling CreateAiToolCommand
+2025-07-12 16:31:48.675 +05:30 [INF] Property aiToolCreateDto : {"Name":"Aitool2","Description":"tool2","Image":null,"ImagePath":"l/p/","ToolUrl":"string2","$type":"AiToolCreateDto"}
+2025-07-12 16:31:49.281 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 5), @p3='?' (DbType = Binary), @p4='?' (Size = 4), @p5='?' (Size = 7), @p6='?' (Size = 7), @p7='?', @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AiToolModels" ("CreatedBy", "CreatedDate", "Description", "Image", "ImagePath", "Name", "ToolUrl", "UpdatedBy", "UpdatedDate")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2025-07-12 16:31:49.284 +05:30 [INF] Handled CreateAiToolCommand with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithoutId] in 603 ms
+2025-07-12 16:31:49.286 +05:30 [INF] Executed endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:31:49.288 +05:30 [INF] Request finished HTTP/2 POST https://localhost:57679/AiTools/create - 200 null application/json; charset=utf-8 3568.7667ms
+2025-07-12 16:31:55.614 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:31:55.617 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:31:57.472 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:31:57.477 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:31:57.489 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 15 ms
+2025-07-12 16:31:57.493 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:31:57.495 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 200 null application/json; charset=utf-8 1880.9933ms
+2025-07-12 16:32:04.895 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/get?id=1 - null null
+2025-07-12 16:32:04.898 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:32:04.908 +05:30 [INF] Handling GetAiToolQuery
+2025-07-12 16:32:04.909 +05:30 [INF] Property aiToolGetDto : {"Id":1,"$type":"AiToolGetDto"}
+2025-07-12 16:32:04.953 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:32:04.955 +05:30 [INF] Handled GetAiToolQuery with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 43 ms
+2025-07-12 16:32:04.957 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:32:04.958 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/get?id=1 - 200 null application/json; charset=utf-8 62.799ms
+2025-07-12 16:32:10.016 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/get?id=2 - null null
+2025-07-12 16:32:10.019 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:32:10.020 +05:30 [INF] Handling GetAiToolQuery
+2025-07-12 16:32:10.021 +05:30 [INF] Property aiToolGetDto : {"Id":2,"$type":"AiToolGetDto"}
+2025-07-12 16:32:10.026 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:32:10.028 +05:30 [INF] Handled GetAiToolQuery with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 5 ms
+2025-07-12 16:32:10.030 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:32:10.031 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/get?id=2 - 200 null application/json; charset=utf-8 14.7137ms
+2025-07-12 16:32:40.979 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:57679/AiTools/update - application/json 135
+2025-07-12 16:32:40.981 +05:30 [INF] Executing endpoint 'HTTP: PUT /AiTools/update'
+2025-07-12 16:32:40.988 +05:30 [INF] Handling UpdateAiToolCommand
+2025-07-12 16:32:40.989 +05:30 [INF] Property aiToolUpdateDto : {"Id":1,"Name":"string1","Description":"string1","Image":null,"ImagePath":"string/string","ToolUrl":"string1","$type":"AiToolUpdateDto"}
+2025-07-12 16:32:40.996 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:32:41.003 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 7), @p3='?' (DbType = Binary), @p4='?' (Size = 13), @p5='?' (Size = 7), @p6='?' (Size = 7), @p7='?', @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AiToolModels" SET "CreatedBy" = @p0, "CreatedDate" = @p1, "Description" = @p2, "Image" = @p3, "ImagePath" = @p4, "Name" = @p5, "ToolUrl" = @p6, "UpdatedBy" = @p7, "UpdatedDate" = @p8
+WHERE "Id" = @p9
+RETURNING 1;
+2025-07-12 16:32:41.007 +05:30 [INF] Handled UpdateAiToolCommand with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 12 ms
+2025-07-12 16:32:41.009 +05:30 [INF] Executed endpoint 'HTTP: PUT /AiTools/update'
+2025-07-12 16:32:41.010 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:57679/AiTools/update - 200 null application/json; charset=utf-8 31.2635ms
+2025-07-12 16:32:47.058 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:32:47.061 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:32:52.728 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:32:52.731 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:32:52.733 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 3 ms
+2025-07-12 16:32:52.734 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:32:52.761 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 200 null application/json; charset=utf-8 5703.0054ms
+2025-07-12 16:33:02.622 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:57679/AiTools/delete - */* 13
+2025-07-12 16:33:02.626 +05:30 [INF] Executing endpoint 'HTTP: DELETE /AiTools/delete'
+2025-07-12 16:33:02.636 +05:30 [INF] Handling DeleteAiToolCommand
+2025-07-12 16:33:02.637 +05:30 [INF] Property aiToolDeleteDto : {"Id":0,"$type":"AiToolDeleteDto"}
+2025-07-12 16:33:02.642 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:33:12.443 +05:30 [INF] Executed endpoint 'HTTP: DELETE /AiTools/delete'
+2025-07-12 16:33:12.446 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: AiTool with Id 0 not found. 
+    at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 56 
+   at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 63
+   at AllInOne.UseCases.AiTools.Delete.DeleteAiToolHandler.Handle(DeleteAiToolCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.UseCases\AiTools\Delete\DeleteAiToolHandler.cs:line 18
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AllInOne.Web.AiTools.Delete.HandleAsync(AiToolDeleteDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web\AiTools\Delete.cs:line 23
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-12 16:33:12.476 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:57679/AiTools/delete - 500 null text/plain; charset=utf-8 9853.2131ms
+2025-07-12 16:33:19.470 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:57679/AiTools/delete - */* 14
+2025-07-12 16:33:19.473 +05:30 [INF] Executing endpoint 'HTTP: DELETE /AiTools/delete'
+2025-07-12 16:33:19.475 +05:30 [INF] Handling DeleteAiToolCommand
+2025-07-12 16:33:19.476 +05:30 [INF] Property aiToolDeleteDto : {"Id":0,"$type":"AiToolDeleteDto"}
+2025-07-12 16:33:29.953 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:33:30.764 +05:30 [INF] Executed endpoint 'HTTP: DELETE /AiTools/delete'
+2025-07-12 16:33:30.767 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: AiTool with Id 0 not found. 
+    at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 56 
+   at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 63
+   at AllInOne.UseCases.AiTools.Delete.DeleteAiToolHandler.Handle(DeleteAiToolCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.UseCases\AiTools\Delete\DeleteAiToolHandler.cs:line 18
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AllInOne.Web.AiTools.Delete.HandleAsync(AiToolDeleteDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web\AiTools\Delete.cs:line 23
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-12 16:33:30.772 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:57679/AiTools/delete - 500 null text/plain; charset=utf-8 11302.1895ms
+2025-07-12 16:33:46.142 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:57679/AiTools/delete - */* 14
+2025-07-12 16:33:46.144 +05:30 [INF] Executing endpoint 'HTTP: DELETE /AiTools/delete'
+2025-07-12 16:37:10.331 +05:30 [INF] Registered 10 endpoints in 422 milliseconds.
+2025-07-12 16:37:11.119 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-07-12 16:37:11.334 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-07-12 16:37:11.493 +05:30 [INF] Now listening on: https://localhost:57679
+2025-07-12 16:37:11.498 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-12 16:37:12.025 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-12 16:37:12.026 +05:30 [INF] Hosting environment: Development
+2025-07-12 16:37:12.027 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-07-12 16:37:31.776 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:37:31.922 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 149.7928ms
+2025-07-12 16:37:31.945 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:37:31.945 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:37:31.961 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 16.1587ms
+2025-07-12 16:37:31.990 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 45.4213ms
+2025-07-12 16:37:32.217 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:37:32.270 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 52.865ms
+2025-07-12 16:37:40.309 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:57679/AiTools/delete - */* 13
+2025-07-12 16:37:40.318 +05:30 [INF] Executing endpoint 'HTTP: DELETE /AiTools/delete'
+2025-07-12 16:37:58.945 +05:30 [INF] Handling DeleteAiToolCommand
+2025-07-12 16:37:58.947 +05:30 [INF] Property aiToolDeleteDto : {"Id":0,"$type":"AiToolDeleteDto"}
+2025-07-12 16:38:01.360 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:38:02.598 +05:30 [INF] Executed endpoint 'HTTP: DELETE /AiTools/delete'
+2025-07-12 16:38:02.600 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: AiTool with Id 0 not found. 
+    at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 56 
+   at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 63
+   at AllInOne.UseCases.AiTools.Delete.DeleteAiToolHandler.Handle(DeleteAiToolCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.UseCases\AiTools\Delete\DeleteAiToolHandler.cs:line 18
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AllInOne.Web.AiTools.Delete.HandleAsync(AiToolDeleteDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web\AiTools\Delete.cs:line 24
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-12 16:38:02.620 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:57679/AiTools/delete - 500 null text/plain; charset=utf-8 22310.6142ms
+2025-07-12 16:39:56.927 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:39:56.977 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:39:56.977 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:39:56.988 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 10.3864ms
+2025-07-12 16:39:56.987 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 59.499ms
+2025-07-12 16:39:57.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.4484ms
+2025-07-12 16:39:57.125 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:39:57.137 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 12.4955ms
+2025-07-12 16:40:17.692 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:40:17.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 6.9412ms
+2025-07-12 16:40:17.729 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:40:17.730 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:40:17.735 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 4.9105ms
+2025-07-12 16:40:17.744 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.9308ms
+2025-07-12 16:40:17.838 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:40:17.844 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 5.3661ms
+2025-07-12 16:40:23.646 +05:30 [INF] Registered 10 endpoints in 499 milliseconds.
+2025-07-12 16:40:24.365 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-07-12 16:40:24.561 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-07-12 16:40:24.710 +05:30 [INF] Now listening on: https://localhost:57679
+2025-07-12 16:40:24.715 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-12 16:40:25.209 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-12 16:40:25.210 +05:30 [INF] Hosting environment: Development
+2025-07-12 16:40:25.211 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-07-12 16:40:33.137 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2025-07-12 16:40:33.419 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 404 0 null 289.159ms
+2025-07-12 16:40:33.437 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:57679/, Response status code: 404
+2025-07-12 16:40:35.287 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2025-07-12 16:40:35.299 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 404 0 null 12.1076ms
+2025-07-12 16:40:35.303 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:57679/, Response status code: 404
+2025-07-12 16:40:38.621 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:40:38.657 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 36.4547ms
+2025-07-12 16:40:38.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:40:38.710 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 17.3025ms
+2025-07-12 16:40:38.768 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:40:38.799 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.5032ms
+2025-07-12 16:40:39.010 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:40:39.061 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 50.9035ms
+2025-07-12 16:41:08.965 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:57679/AiTools/delete - */* 13
+2025-07-12 16:41:08.969 +05:30 [INF] Executing endpoint 'HTTP: DELETE /AiTools/delete/'
+2025-07-12 16:41:24.562 +05:30 [INF] Handling DeleteAiToolCommand
+2025-07-12 16:41:24.565 +05:30 [INF] Property aiToolDeleteDto : {"Id":0,"$type":"AiToolDeleteDto"}
+2025-07-12 16:41:27.048 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:41:28.135 +05:30 [INF] Executed endpoint 'HTTP: DELETE /AiTools/delete/'
+2025-07-12 16:41:28.137 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: AiTool with Id 0 not found. 
+    at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 56 
+   at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 63
+   at AllInOne.UseCases.AiTools.Delete.DeleteAiToolHandler.Handle(DeleteAiToolCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.UseCases\AiTools\Delete\DeleteAiToolHandler.cs:line 18
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AllInOne.Web.AiTools.Delete.HandleAsync(AiToolDeleteDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web\AiTools\Delete.cs:line 26
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-12 16:41:28.162 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:57679/AiTools/delete - 500 null text/plain; charset=utf-8 19197.5021ms
+2025-07-12 16:41:40.945 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/get?id=1 - null null
+2025-07-12 16:41:40.954 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:41:40.977 +05:30 [INF] Handling GetAiToolQuery
+2025-07-12 16:41:40.979 +05:30 [INF] Property aiToolGetDto : {"Id":1,"$type":"AiToolGetDto"}
+2025-07-12 16:41:41.024 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:41:41.069 +05:30 [INF] Handled GetAiToolQuery with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 87 ms
+2025-07-12 16:41:41.075 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:41:41.077 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/get?id=1 - 200 null application/json; charset=utf-8 131.6593ms
+2025-07-12 16:43:30.661 +05:30 [INF] Registered 10 endpoints in 416 milliseconds.
+2025-07-12 16:43:31.386 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-07-12 16:43:31.569 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-07-12 16:43:31.706 +05:30 [INF] Now listening on: https://localhost:57679
+2025-07-12 16:43:31.711 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-12 16:43:31.772 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-12 16:43:31.774 +05:30 [INF] Hosting environment: Development
+2025-07-12 16:43:31.775 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-07-12 16:44:19.230 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:44:19.379 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 152.9429ms
+2025-07-12 16:44:19.461 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:44:19.461 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:44:19.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 46.6928ms
+2025-07-12 16:44:19.534 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.8432ms
+2025-07-12 16:44:19.727 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:44:19.783 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 55.5344ms
+2025-07-12 16:44:23.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:44:23.699 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:44:30.692 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:44:30.740 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:44:30.785 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 91 ms
+2025-07-12 16:44:30.793 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:44:30.798 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 200 null application/json; charset=utf-8 7104.9661ms
+2025-07-12 16:44:37.210 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/get?id=1 - null null
+2025-07-12 16:44:37.214 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:44:37.242 +05:30 [INF] Handling GetAiToolQuery
+2025-07-12 16:44:37.245 +05:30 [INF] Property aiToolGetDto : {"Id":1,"$type":"AiToolGetDto"}
+2025-07-12 16:44:37.330 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:44:37.332 +05:30 [INF] Handled GetAiToolQuery with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 83 ms
+2025-07-12 16:44:37.336 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:44:37.337 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/get?id=1 - 200 null application/json; charset=utf-8 127.7847ms
+2025-07-12 16:44:43.876 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:57679/AiTools/delete - */* 14
+2025-07-12 16:44:43.879 +05:30 [INF] Executing endpoint 'HTTP: DELETE /AiTools/delete/'
+2025-07-12 16:44:43.890 +05:30 [INF] Handling DeleteAiToolCommand
+2025-07-12 16:44:43.892 +05:30 [INF] Property aiToolDeleteDto : {"Id":0,"$type":"AiToolDeleteDto"}
+2025-07-12 16:44:43.901 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:44:54.485 +05:30 [INF] Executed endpoint 'HTTP: DELETE /AiTools/delete/'
+2025-07-12 16:44:54.488 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: AiTool with Id 0 not found. 
+    at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 56 
+   at AllInOne.Core.Services.AiToolService.DeleteAiToolById(AiToolDeleteDto deleteDto) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Core\Services\AiToolService.cs:line 63
+   at AllInOne.UseCases.AiTools.Delete.DeleteAiToolHandler.Handle(DeleteAiToolCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.UseCases\AiTools\Delete\DeleteAiToolHandler.cs:line 18
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at AllInOne.Web.AiTools.Delete.HandleAsync(AiToolDeleteDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web\AiTools\Delete.cs:line 26
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-12 16:44:54.508 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:57679/AiTools/delete - 500 null text/plain; charset=utf-8 10631.9644ms
+2025-07-12 16:47:42.454 +05:30 [INF] Registered 10 endpoints in 425 milliseconds.
+2025-07-12 16:47:43.293 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-07-12 16:47:43.493 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-07-12 16:47:43.667 +05:30 [INF] Now listening on: https://localhost:57679
+2025-07-12 16:47:43.673 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-12 16:47:43.741 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-12 16:47:43.742 +05:30 [INF] Hosting environment: Development
+2025-07-12 16:47:43.743 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-07-12 16:47:48.829 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:47:48.984 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 159.1785ms
+2025-07-12 16:47:49.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:47:49.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:47:49.040 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 6.2165ms
+2025-07-12 16:47:49.108 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.2114ms
+2025-07-12 16:47:49.308 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:47:49.366 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 58.0169ms
+2025-07-12 16:47:55.824 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:57679/AiTools/delete/1 - null null
+2025-07-12 16:47:55.832 +05:30 [INF] Executing endpoint 'HTTP: DELETE /AiTools/delete/{Id}'
+2025-07-12 16:47:55.874 +05:30 [INF] Handling DeleteAiToolCommand
+2025-07-12 16:47:55.877 +05:30 [INF] Property aiToolDeleteDto : {"Id":1,"$type":"AiToolDeleteDto"}
+2025-07-12 16:47:55.963 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:47:56.094 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "AiToolModels"
+WHERE "Id" = @p0
+RETURNING 1;
+2025-07-12 16:47:56.108 +05:30 [INF] Handled DeleteAiToolCommand with Ardalis.Result.Result`1[System.Int32] in 227 ms
+2025-07-12 16:47:56.115 +05:30 [INF] Executed endpoint 'HTTP: DELETE /AiTools/delete/{Id}'
+2025-07-12 16:47:56.120 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:57679/AiTools/delete/1 - 200 null application/json; charset=utf-8 296.0772ms
+2025-07-12 16:48:02.651 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:48:02.655 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:48:02.665 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:48:02.713 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:48:02.719 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 52 ms
+2025-07-12 16:48:02.727 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:48:02.728 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 200 null application/json; charset=utf-8 77.3419ms
+2025-07-12 16:49:52.289 +05:30 [INF] Registered 10 endpoints in 346 milliseconds.
+2025-07-12 16:49:52.987 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-07-12 16:49:53.176 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-07-12 16:49:53.319 +05:30 [INF] Now listening on: https://localhost:57679
+2025-07-12 16:49:53.325 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-12 16:49:53.390 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-12 16:49:53.391 +05:30 [INF] Hosting environment: Development
+2025-07-12 16:49:53.392 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-07-12 16:49:53.505 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-12 16:49:53.748 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 246.5792ms
+2025-07-12 16:49:53.828 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-12 16:49:53.828 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-12 16:49:53.878 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 49.7722ms
+2025-07-12 16:49:53.903 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.8579ms
+2025-07-12 16:49:54.081 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-12 16:49:54.115 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 34.5966ms
+2025-07-12 16:50:16.302 +05:30 [INF] Request starting HTTP/2 POST https://localhost:57679/AiTools/create - application/json 132
+2025-07-12 16:50:16.308 +05:30 [INF] Executing endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:50:16.365 +05:30 [INF] Handling CreateAiToolCommand
+2025-07-12 16:50:16.368 +05:30 [INF] Property aiToolCreateDto : {"Name":"string123","Description":"string123","Image":null,"ImagePath":"string/striong","ToolUrl":"string1253","$type":"AiToolCreateDto"}
+2025-07-12 16:50:16.532 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 9), @p3='?' (DbType = Binary), @p4='?' (Size = 14), @p5='?' (Size = 9), @p6='?' (Size = 10), @p7='?', @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AiToolModels" ("CreatedBy", "CreatedDate", "Description", "Image", "ImagePath", "Name", "ToolUrl", "UpdatedBy", "UpdatedDate")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2025-07-12 16:50:16.557 +05:30 [INF] Handled CreateAiToolCommand with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 178 ms
+2025-07-12 16:50:16.563 +05:30 [INF] Executed endpoint 'HTTP: POST /AiTools/create'
+2025-07-12 16:50:16.568 +05:30 [INF] Request finished HTTP/2 POST https://localhost:57679/AiTools/create - 200 null application/json; charset=utf-8 314.219ms
+2025-07-12 16:50:24.270 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:50:24.274 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:50:24.284 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:50:24.367 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:50:24.379 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 93 ms
+2025-07-12 16:50:24.383 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:50:24.385 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 200 null application/json; charset=utf-8 114.3523ms
+2025-07-12 16:50:29.968 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/get?id=3 - null null
+2025-07-12 16:50:29.971 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:50:29.983 +05:30 [INF] Handling GetAiToolQuery
+2025-07-12 16:50:29.984 +05:30 [INF] Property aiToolGetDto : {"Id":3,"$type":"AiToolGetDto"}
+2025-07-12 16:50:30.026 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:50:30.028 +05:30 [INF] Handled GetAiToolQuery with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 41 ms
+2025-07-12 16:50:30.030 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/get'
+2025-07-12 16:50:30.032 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/get?id=3 - 200 null application/json; charset=utf-8 63.5ms
+2025-07-12 16:50:52.520 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:57679/AiTools/update - application/json 125
+2025-07-12 16:50:52.523 +05:30 [INF] Executing endpoint 'HTTP: PUT /AiTools/update'
+2025-07-12 16:50:52.531 +05:30 [INF] Handling UpdateAiToolCommand
+2025-07-12 16:50:52.533 +05:30 [INF] Property aiToolUpdateDto : {"Id":3,"Name":"string","Description":"string","Image":null,"ImagePath":"string","ToolUrl":"string","$type":"AiToolUpdateDto"}
+2025-07-12 16:50:52.542 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-07-12 16:50:52.549 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?', @p1='?' (DbType = DateTime), @p2='?' (Size = 6), @p3='?' (DbType = Binary), @p4='?' (Size = 6), @p5='?' (Size = 6), @p6='?' (Size = 6), @p7='?', @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AiToolModels" SET "CreatedBy" = @p0, "CreatedDate" = @p1, "Description" = @p2, "Image" = @p3, "ImagePath" = @p4, "Name" = @p5, "ToolUrl" = @p6, "UpdatedBy" = @p7, "UpdatedDate" = @p8
+WHERE "Id" = @p9
+RETURNING 1;
+2025-07-12 16:50:52.554 +05:30 [INF] Handled UpdateAiToolCommand with Ardalis.Result.Result`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId] in 15 ms
+2025-07-12 16:50:52.556 +05:30 [INF] Executed endpoint 'HTTP: PUT /AiTools/update'
+2025-07-12 16:50:52.557 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:57679/AiTools/update - 200 null application/json; charset=utf-8 36.7492ms
+2025-07-12 16:50:56.653 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-12 16:50:56.656 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:50:56.658 +05:30 [INF] Handling ListAiToolQuery
+2025-07-12 16:50:56.660 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-12 16:50:56.663 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 4 ms
+2025-07-12 16:50:56.665 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-12 16:50:56.666 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 200 null application/json; charset=utf-8 13.1263ms

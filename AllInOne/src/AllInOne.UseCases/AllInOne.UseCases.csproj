@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Result" />
+    <PackageReference Include="MediatR" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AllInOne.Core.Shared\AllInOne.Core.Shared.csproj" />
+    <ProjectReference Include="..\AllInOne.Core\AllInOne.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="CleanArchitecture.nuspec" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/AllInOne.AspireHost/AllInOne.AspireHost.csproj" />
+    <Project Path="src/AllInOne.Core/AllInOne.Core.csproj" />
+    <Project Path="src/AllInOne.Infrastructure/AllInOne.Infrastructure.csproj" />
+    <Project Path="src/AllInOne.ServiceDefaults/AllInOne.ServiceDefaults.csproj" />
+    <Project Path="src/AllInOne.UseCases/AllInOne.UseCases.csproj" />
+    <Project Path="src/AllInOne.Web/AllInOne.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AllInOne.FunctionalTests/AllInOne.FunctionalTests.csproj">
+      <BuildDependency Project="src/AllInOne.Web/AllInOne.Web.csproj" />
+    </Project>
+    <Project Path="tests/AllInOne.IntegrationTests/AllInOne.IntegrationTests.csproj">
+      <BuildDependency Project="src/AllInOne.Infrastructure/AllInOne.Infrastructure.csproj" />
+    </Project>
+    <Project Path="tests/AllInOne.UnitTests/AllInOne.UnitTests.csproj" />
+  </Folder>
+</Solution>

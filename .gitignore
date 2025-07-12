@@ -1,0 +1,17 @@
+/AllInOne/src/AllInOne.Core/bin
+/AllInOne/src/AllInOne.Core/obj
+/AllInOne/src/AllInOne.Infrastructure/bin
+/AllInOne/src/AllInOne.Infrastructure/obj
+/AllInOne/src/AllInOne.UseCases/bin
+/AllInOne/src/AllInOne.UseCases/obj
+/AllInOne/src/AllInOne.Web/bin
+/AllInOne/src/AllInOne.Web/obj
+/AllInOne/AllInOne.Core.Shared/bin
+/AllInOne/AllInOne.Core.Shared/obj
+/AllInOne/tests/AllInOne.FunctionalTests/bin
+/AllInOne/tests/AllInOne.FunctionalTests/obj
+/AllInOne/tests/AllInOne.IntegrationTests/bin
+/AllInOne/tests/AllInOne.IntegrationTests/obj
+/AllInOne/tests/AllInOne.UnitTests/bin
+/AllInOne/tests/AllInOne.UnitTests/obj
+/AllInOne/.vs
