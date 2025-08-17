@@ -1,0 +1,32 @@
+2025-07-14 22:08:42.942 +05:30 [INF] Registered 10 endpoints in 1,598 milliseconds.
+2025-07-14 22:08:44.634 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-07-14 22:08:44.823 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-07-14 22:08:45.005 +05:30 [INF] Now listening on: https://localhost:57679
+2025-07-14 22:08:45.010 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-14 22:08:45.075 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 22:08:45.076 +05:30 [INF] Hosting environment: Development
+2025-07-14 22:08:45.077 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-07-14 22:08:48.659 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2025-07-14 22:08:48.871 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 404 0 null 217.6314ms
+2025-07-14 22:08:48.878 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:57679/, Response status code: 404
+2025-07-14 22:08:51.354 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-07-14 22:08:51.399 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 44.5733ms
+2025-07-14 22:08:51.479 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-14 22:08:51.480 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-07-14 22:08:51.491 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 12.0536ms
+2025-07-14 22:08:51.543 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.9688ms
+2025-07-14 22:08:51.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-07-14 22:08:51.842 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 95.7885ms
+2025-07-14 22:08:56.781 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/AiTools/list - null null
+2025-07-14 22:08:56.785 +05:30 [INF] Executing endpoint 'HTTP: GET /AiTools/list'
+2025-07-14 22:08:56.812 +05:30 [INF] Handling ListAiToolQuery
+2025-07-14 22:08:56.865 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."CreatedBy", "a"."CreatedDate", "a"."Description", "a"."Image", "a"."ImagePath", "a"."Name", "a"."ToolUrl", "a"."UpdatedBy", "a"."UpdatedDate"
+FROM "AiToolModels" AS "a"
+2025-07-14 22:08:56.915 +05:30 [INF] Handled ListAiToolQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[AllInOne.Core.Shared.OutputDTO.AiToolDtoOutWithId]] in 101 ms
+2025-07-14 22:08:56.923 +05:30 [INF] Executed endpoint 'HTTP: GET /AiTools/list'
+2025-07-14 22:08:56.926 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/AiTools/list - 200 null application/json; charset=utf-8 145.5579ms

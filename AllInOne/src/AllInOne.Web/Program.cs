@@ -1,4 +1,6 @@
-﻿using AllInOne.Web.Configurations;
+﻿using AllInOne.Core.mapper;
+using AllInOne.Web.Configurations;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,11 @@ var appLogger = new SerilogLoggerFactory(logger)
 
 builder.Services.AddOptionConfigs(builder.Configuration, appLogger, builder);
 builder.Services.AddServiceConfigs(appLogger, builder);
+builder.Services.AddAutoMapper(cfg =>
+{
+  cfg.AddProfile<MapperProfile>();
+});
+
 
 // Add CORS policy
 builder.Services.AddCors(options =>
@@ -36,6 +43,7 @@ builder.Services.AddFastEndpoints()
 
 
 var app = builder.Build();
+app.UseCors("AllowAll");
 
 await app.UseAppMiddlewareAndSeedDatabase();
 

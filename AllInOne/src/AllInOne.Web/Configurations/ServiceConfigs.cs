@@ -19,6 +19,8 @@ public static class ServiceConfigs
       // See: https://ardalis.com/configuring-a-local-test-email-server/
       services.AddScoped<IEmailSender, MimeKitEmailSender>();
       services.AddScoped<IAiToolService, AiToolService>();
+      services.AddScoped<IProductService, ProductService>();
+      services.AddScoped<IProductCategoryService,  ProductCategoryService>();
 
       // Otherwise use this:
       //builder.Services.AddScoped<IEmailSender, FakeEmailSender>();
@@ -28,6 +30,8 @@ public static class ServiceConfigs
     {
       services.AddScoped<IEmailSender, MimeKitEmailSender>();
       services.AddScoped<IAiToolService, AiToolService>();
+      services.AddScoped<IProductService, ProductService>();
+      services.AddScoped<IProductCategoryService, ProductCategoryService>();
     }
 
     logger.LogInformation("{Project} services registered", "Mediatr and Email Sender");

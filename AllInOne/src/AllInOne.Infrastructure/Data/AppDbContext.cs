@@ -9,6 +9,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options,
 
   public DbSet<Contributor> Contributors => Set<Contributor>();
   public DbSet<AiToolModel> AiToolModels => Set<AiToolModel>();
+  public DbSet<Products> Product => Set<Products>();
+  public DbSet<ProductCategories> ProductCategories => Set<ProductCategories>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

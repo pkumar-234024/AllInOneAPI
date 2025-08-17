@@ -1,0 +1,56 @@
+2025-08-07 18:21:14.430 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-08-07 18:21:14.485 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2025-08-07 18:21:14.490 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-08-07 12:51:14.4880662+00:00');
+SELECT changes();
+2025-08-07 18:21:14.524 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-08-07 18:21:14.530 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-07 18:21:14.531 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-08-07 18:21:14.539 +05:30 [INF] Applying migration '20250807125057_AddedTableProducts'.
+2025-08-07 18:21:14.550 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ProductCategories" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_ProductCategories" PRIMARY KEY AUTOINCREMENT,
+    "CategoryName" TEXT NOT NULL,
+    "CreatedDate" TEXT NOT NULL,
+    "UpdatedDate" TEXT NOT NULL,
+    "CreatedBy" TEXT NOT NULL,
+    "UpdatedBy" TEXT NOT NULL
+);
+2025-08-07 18:21:14.550 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Product" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Product" PRIMARY KEY AUTOINCREMENT,
+    "ProductName" TEXT NOT NULL,
+    "Price" TEXT NOT NULL,
+    "Description" TEXT NOT NULL,
+    "ImagePath" TEXT NOT NULL,
+    "Image" BLOB NULL,
+    "CategoryId" INTEGER NOT NULL,
+    "ProductRating" INTEGER NOT NULL,
+    "NumberOfReviews" INTEGER NOT NULL,
+    "ProductFeatures" TEXT NOT NULL,
+    "PrintType" TEXT NOT NULL,
+    "PaperQuality" TEXT NOT NULL,
+    "TurnaroudnTime" INTEGER NOT NULL,
+    "MinimumOrderQuantity" INTEGER NOT NULL,
+    "CreatedDate" TEXT NOT NULL,
+    "UpdatedDate" TEXT NOT NULL,
+    "CreatedBy" TEXT NOT NULL,
+    "UpdatedBy" TEXT NOT NULL,
+    CONSTRAINT "FK_Product_ProductCategories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "ProductCategories" ("Id") ON DELETE CASCADE
+);
+2025-08-07 18:21:14.551 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Product_CategoryId" ON "Product" ("CategoryId");
+2025-08-07 18:21:14.551 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250807125057_AddedTableProducts', '9.0.0');
+2025-08-07 18:21:14.554 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
