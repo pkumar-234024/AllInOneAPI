@@ -4,10 +4,10 @@ using AllInOne.UseCases.AiTools.Get;
 
 namespace AllInOne.Web.AiTools;
 
-public class Get : Endpoint<AiToolGetDto, AiToolDtoOutWithId>
+public class GetById : Endpoint<AiToolGetDto, AiToolDtoOutWithId>
 {
   private readonly IMediator _mediator;
-  public Get(IMediator mediator)
+  public GetById(IMediator mediator)
   {
     _mediator = mediator;
   }

@@ -4,7 +4,7 @@ using AllInOne.UseCases.AiTools.Delete;
 
 namespace AllInOne.Web.AiTools;
 
-public class Delete : Endpoint<AiToolDeleteDto, int>
+public class Delete : Endpoint<AiToolDeleteDto>
 {
   private readonly IMediator _mediator;
 

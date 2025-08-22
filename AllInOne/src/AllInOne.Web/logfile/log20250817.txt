@@ -1,0 +1,70 @@
+2025-08-17 20:18:17.914 +05:30 [INF] Registered 15 endpoints in 4,709 milliseconds.
+2025-08-17 20:18:22.716 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-08-17 20:18:23.257 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2025-08-17 20:18:23.882 +05:30 [INF] Now listening on: https://localhost:57679
+2025-08-17 20:18:23.898 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-08-17 20:18:24.083 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-17 20:18:24.085 +05:30 [INF] Hosting environment: Development
+2025-08-17 20:18:24.088 +05:30 [INF] Content root path: D:\F\mine\gitgolder\AllInOneAPI\AllInOne\src\AllInOne.Web
+2025-08-17 20:18:32.005 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2025-08-17 20:18:32.480 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 404 0 null 490.3126ms
+2025-08-17 20:18:32.499 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:57679/, Response status code: 404
+2025-08-17 20:18:47.350 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-08-17 20:18:47.449 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 100.3308ms
+2025-08-17 20:18:47.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - null null
+2025-08-17 20:18:47.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.css - null null
+2025-08-17 20:18:47.500 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - null null
+2025-08-17 20:18:47.500 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - null null
+2025-08-17 20:18:47.500 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-17 20:18:47.564 +05:30 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-08-17 20:18:47.574 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.css - 200 218 text/css 74.4048ms
+2025-08-17 20:18:47.624 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 124.5473ms
+2025-08-17 20:18:47.627 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-08-17 20:18:47.627 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-08-17 20:18:47.640 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - 200 152073 text/css 141.4304ms
+2025-08-17 20:18:47.640 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - 200 230294 text/javascript 140.9196ms
+2025-08-17 20:18:47.652 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-08-17 20:18:47.659 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-08-17 20:18:47.668 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - 200 1452754 text/javascript 168.2241ms
+2025-08-17 20:18:47.826 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 173.6624ms
+2025-08-17 20:18:48.046 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-08-17 20:18:48.078 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/favicon-32x32.png - null null
+2025-08-17 20:18:48.085 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-08-17 20:18:48.089 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/favicon-32x32.png - 200 628 image/png 11.311ms
+2025-08-17 20:18:48.243 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Request DTOs without any publicly accessible properties are not supported. Offending Endpoint: [AllInOne.Web.Productss.Delete] Offending DTO type: [System.Int32]
+   at FastEndpoints.Swagger.OperationProcessor.Process(OperationProcessorContext ctx)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.RunOperationProcessors(OpenApiDocument document, ApiDescription apiDescription, Type controllerType, MethodInfo methodInfo, OpenApiOperationDescription operationDescription, List`1 allOperations, OpenApiDocumentGenerator generator, OpenApiSchemaResolver schemaResolver)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.AddOperationDescriptionsToDocument(OpenApiDocument document, Type controllerType, List`1 operations, OpenApiDocumentGenerator swaggerGenerator, OpenApiSchemaResolver schemaResolver)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.GenerateApiGroups(OpenApiDocumentGenerator generator, OpenApiDocument document, IGrouping`2[] apiGroups, OpenApiSchemaResolver schemaResolver)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.GenerateAsync(ApiDescriptionGroupCollection apiDescriptionGroups)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.GenerateDocumentAsync(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.GetDocumentAsync(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-17 20:18:48.258 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 212.3154ms
+2025-08-17 20:19:00.620 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-08-17 20:19:00.637 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 17.2658ms
+2025-08-17 20:19:00.704 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_vs/browserLink - null null
+2025-08-17 20:19:00.704 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-17 20:19:00.730 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 26.3508ms
+2025-08-17 20:19:00.735 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.7743ms
+2025-08-17 20:19:00.848 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-08-17 20:19:00.893 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Request DTOs without any publicly accessible properties are not supported. Offending Endpoint: [AllInOne.Web.Productss.Delete] Offending DTO type: [System.Int32]
+   at FastEndpoints.Swagger.OperationProcessor.Process(OperationProcessorContext ctx)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.RunOperationProcessors(OpenApiDocument document, ApiDescription apiDescription, Type controllerType, MethodInfo methodInfo, OpenApiOperationDescription operationDescription, List`1 allOperations, OpenApiDocumentGenerator generator, OpenApiSchemaResolver schemaResolver)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.AddOperationDescriptionsToDocument(OpenApiDocument document, Type controllerType, List`1 operations, OpenApiDocumentGenerator swaggerGenerator, OpenApiSchemaResolver schemaResolver)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.GenerateApiGroups(OpenApiDocumentGenerator generator, OpenApiDocument document, IGrouping`2[] apiGroups, OpenApiSchemaResolver schemaResolver)
+   at NSwag.Generation.AspNetCore.AspNetCoreOpenApiDocumentGenerator.GenerateAsync(ApiDescriptionGroupCollection apiDescriptionGroups)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.GenerateDocumentAsync(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.GetDocumentAsync(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-17 20:19:00.904 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 56.4174ms

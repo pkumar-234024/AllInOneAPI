@@ -44,7 +44,11 @@ builder.Services.AddFastEndpoints()
 
 var app = builder.Build();
 app.UseCors("AllowAll");
+app.UseHttpsRedirection();
 
+
+// Add Swagger UI after FastEndpoints
+app.UseSwaggerGen();
 await app.UseAppMiddlewareAndSeedDatabase();
 
 app.Run();
