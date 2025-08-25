@@ -7,7 +7,7 @@ public class GetImage : EndpointWithoutRequest
 {
   public override void Configure()
   {
-    Get("/product/image/{fileName}");
+    Get("/uploadimage/image/{fileName}");
     AllowAnonymous();
   }
 

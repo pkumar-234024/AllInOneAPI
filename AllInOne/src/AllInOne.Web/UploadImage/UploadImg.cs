@@ -15,7 +15,7 @@ public class UploadImg : Endpoint<ImageUploadFile, Result<string>>
 
   public override void Configure()
   {
-    Post("/product/upload");
+    Post("/uploadimage/upload");
     AllowAnonymous();
     AllowFileUploads(); // Enables file binding
   }

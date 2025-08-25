@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AllInOne.Core.Interfaces;
 using AllInOne.Core.Models;
+using AllInOne.Core.Shared.InputDTO;
 using AllInOne.Core.Shared.OutputDTO;
 using AutoMapper;
+using MediatR;
 
 namespace AllInOne.Core.Services;
 public class ProductService : IProductService
@@ -18,11 +21,33 @@ public class ProductService : IProductService
     _productRepository = productRepository;
     _mapper = mapper;
   }
-  public async Task<ProductOutDto> CreateProductAsync(Products product)
+  public async Task<ProductOutDto> CreateProductAsync(CreatProductDto product)
   {
     try
     {
-      var result = await _productRepository.AddAsync(product);
+      var ObjProduct = _mapper.Map<Products>(product);
+
+      if (product.ImageFile == null || product.ImageFile!.Length == 0)
+      {
+        throw new Exception("Image is not Empty!");
+      }
+      var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+      if (!Directory.Exists(folderPath))
+        Directory.CreateDirectory(folderPath);
+
+      var filePath = Path.Combine(folderPath, product.ImageFile!.FileName);
+
+      using (var stream = new FileStream(filePath, FileMode.Create))
+      {
+        await product.ImageFile!.CopyToAsync(stream);
+      }
+
+      // return relative path or URL
+      var savedPath = $"/uploads/{product.ImageFile!.FileName}";
+      ObjProduct.ImagePath = savedPath;
+      ObjProduct.ImageName = product.ImageFile!.FileName;
+      var result = await _productRepository.AddAsync(ObjProduct);
       return _mapper.Map<ProductOutDto>(result);
     }
     catch (Exception ex)
@@ -85,16 +110,39 @@ public class ProductService : IProductService
     }
   }
 
-  public async Task<ProductOutDto> UpdateProductAsync(Products product)
+  public async Task<ProductOutDto> UpdateProductAsync(UpdateProductDto product)
   {
     try
     {
+
+      if (product.ImageFile == null || product.ImageFile!.Length == 0)
+      {
+        throw new Exception("Image is not Empty!");
+      }
+      var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+      if (!Directory.Exists(folderPath))
+        Directory.CreateDirectory(folderPath);
+
+      var filePath = Path.Combine(folderPath, product.ImageFile!.FileName);
+
+      using (var stream = new FileStream(filePath, FileMode.Create))
+      {
+        await product.ImageFile!.CopyToAsync(stream);
+      }
+
+      // return relative path or URL
+      var savedPath = $"/uploads/{product.ImageFile!.FileName}";
+
+
       var existingProduct = await _productRepository.GetByIdAsync(product.Id);
       if (existingProduct == null)
       {
         throw new Exception("Product not found");
       }
       existingProduct = _mapper.Map(product, existingProduct);
+      existingProduct.ImagePath = savedPath;
+      existingProduct.ImageName = product.ImageFile!.FileName;
       await _productRepository.UpdateAsync(existingProduct);
       return _mapper.Map<ProductOutDto>(existingProduct);
     }

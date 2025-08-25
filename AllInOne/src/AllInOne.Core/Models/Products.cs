@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,15 +13,17 @@ public class Products : BaseClass
   public decimal Price { get; set; }
   public string Description { get; set; } = string.Empty;
   public string ImagePath { get; set; } = string.Empty;
-  //public byte[]? Image { get; set; } // Nullable byte array for image data
+  public string ImageName { get; set; } = string.Empty;
   public int? CategoryId { get; set; }
   public int ProductRating { get; set; } // Assuming ProductRating is an integer value
   public int NumberOfReviews { get; set; } // Assuming NumberOfReviews is an integer value
-  public string ProductFeatures { get; set; } = string.Empty; // Assuming ProductFeatures is a string containing features of the product
+  public string[] ProductFeatures { get; set; } = [];
   public string PrintType { get; set; } = string.Empty; // Assuming PrintType is a string representing the type of print (e.g., "3D", "2D", etc.)
   public string PaperQuality { get; set; } = string.Empty; // Assuming PaperQuality is a string representing the quality of paper used for printing
   public int TurnaroudnTime { get; set; }  // Assuming TurnaroundTime is a string representing the time taken for printing and delivery
   public int MinimumOrderQuantity { get; set; } // Assuming MinimumOrderQuantity is an integer representing the minimum quantity that can be ordered
+  public string DesignSupport { get; set; } = string.Empty;
+  public string Delivery { get; set; } = string.Empty;
+  public bool InStock { get; set; } = true;
 
-  public IFormFile? Image { get; set; }
 }

@@ -15,5 +15,6 @@ public class MapperProfile : Profile
   {
     CreateMap<Products, ProductOutDto>();
     CreateMap<CreatProductDto, Products>();
+    CreateMap<UpdateProductDto, Products>();
   }
 }

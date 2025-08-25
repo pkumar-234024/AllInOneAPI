@@ -1,4 +1,5 @@
-﻿using AllInOne.Core.ContributorAggregate;
+﻿using System.Text.Json;
+using AllInOne.Core.ContributorAggregate;
 using AllInOne.Core.Models;
 
 namespace AllInOne.Infrastructure.Data;
@@ -9,13 +10,20 @@ public class AppDbContext(DbContextOptions<AppDbContext> options,
 
   public DbSet<Contributor> Contributors => Set<Contributor>();
   public DbSet<AiToolModel> AiToolModels => Set<AiToolModel>();
-  public DbSet<Products> Product => Set<Products>();
+  public DbSet<Products> Products => Set<Products>();
   public DbSet<ProductCategories> ProductCategories => Set<ProductCategories>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+    modelBuilder.Entity<Products>()
+        .Property(p => p.ProductFeatures)
+        .HasConversion(
+            v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null),
+            v => JsonSerializer.Deserialize<string[]>(v, (JsonSerializerOptions?)null)!);
+
   }
 
   public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
