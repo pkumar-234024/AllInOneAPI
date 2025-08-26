@@ -21,6 +21,7 @@ public static class ServiceConfigs
       services.AddScoped<IAiToolService, AiToolService>();
       services.AddScoped<IProductService, ProductService>();
       services.AddScoped<IProductCategoryService,  ProductCategoryService>();
+      services.AddScoped<IProductImageService, ProductImageService>();
 
       // Otherwise use this:
       //builder.Services.AddScoped<IEmailSender, FakeEmailSender>();
@@ -32,6 +33,7 @@ public static class ServiceConfigs
       services.AddScoped<IAiToolService, AiToolService>();
       services.AddScoped<IProductService, ProductService>();
       services.AddScoped<IProductCategoryService, ProductCategoryService>();
+      services.AddScoped<IProductImageService, ProductImageService>();
     }
 
     logger.LogInformation("{Project} services registered", "Mediatr and Email Sender");

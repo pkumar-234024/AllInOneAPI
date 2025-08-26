@@ -12,6 +12,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options,
   public DbSet<AiToolModel> AiToolModels => Set<AiToolModel>();
   public DbSet<Products> Products => Set<Products>();
   public DbSet<ProductCategories> ProductCategories => Set<ProductCategories>();
+  public DbSet<ProductImages> ProductImage => Set< ProductImages >();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
