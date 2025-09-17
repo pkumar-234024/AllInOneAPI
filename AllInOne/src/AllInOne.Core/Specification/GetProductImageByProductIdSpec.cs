@@ -11,6 +11,6 @@ public class GetProductImageByProductIdSpec : Specification<ProductImages>
 {
   public GetProductImageByProductIdSpec(int productId)
   {
-    Query.Where(pi=> pi.Id == productId).OrderByDescending(productId => productId);
+    Query.Where(pi=> pi.ProductId == productId).OrderByDescending(productId => productId);
   }
 }

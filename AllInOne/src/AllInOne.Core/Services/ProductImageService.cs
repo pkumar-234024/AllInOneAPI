@@ -23,48 +23,7 @@ public class ProductImageService : IProductImageService
   {
     _productImages = productImages;
     _mapper = mapper;
-
   }
-  public async Task<bool> CreateProductImages(CreateProductImageDto productImageDto)
-  {
-    try
-    {
-      if (productImageDto.ImageFiles != null && productImageDto.ImageFiles.Any())
-      {
-        foreach(var imageFile in productImageDto.ImageFiles)
-        {
-          if (imageFile!.FileName == null || imageFile!.FileName.Length == 0)
-          {
-            throw new Exception("Image is not Empty!");
-          }
-          var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-
-          if (!Directory.Exists(folderPath))
-            Directory.CreateDirectory(folderPath);
-
-          var filePath = Path.Combine(folderPath, imageFile.FileName!);
-
-          using (var stream = new FileStream(filePath, FileMode.Create))
-          {
-            await imageFile!.CopyToAsync(stream);
-          }
-
-          // return relative path or URL
-          var savedPath = $"/uploads/{imageFile.FileName}";
-          ProductImages productImage = new ProductImages();
-          productImage.ProductId = productImageDto.ProductId;
-          productImage.ImageName = imageFile.FileName!;
-          await _productImages.AddAsync(productImage);
-        }
-      }
-      return true;
-    }
-    catch (Exception ex)
-    {
-      throw new Exception($"{ex.Message}");
-    }
-  }
-
   public async Task<List<ProductImageDto>> ListImageByProductId(int productId)
   {
     try

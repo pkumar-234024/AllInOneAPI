@@ -14,15 +14,18 @@ public class GetImage : EndpointWithoutRequest
   public override async Task HandleAsync(CancellationToken cancellationToken)
   {
     var fileName = Route<string>("fileName");
-    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", fileName!);
+    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "masterImage", fileName!);
 
-    if (!System.IO.File.Exists(filePath))
+    if(!System.IO.File.Exists(filePath))
     {
-      await SendNotFoundAsync(cancellationToken);
-      return;
+      filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "childImage", fileName!);
+      if (!System.IO.File.Exists(filePath))
+      {
+        await SendNotFoundAsync(cancellationToken);
+        return;
+      }
     }
-
-    var contentType = GetContentType(filePath);
+      var contentType = GetContentType(filePath);
 
     // read bytes manually so we can control headers
     var bytes = await System.IO.File.ReadAllBytesAsync(filePath, cancellationToken);

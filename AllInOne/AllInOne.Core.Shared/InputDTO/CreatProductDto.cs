@@ -2,15 +2,17 @@
 using Microsoft.AspNetCore.Http;
 
 namespace AllInOne.Core.Shared.InputDTO;
-public class CreatProductDto{
+public class CreatProductDto
+{
   public string ProductName { get; set; } = string.Empty;
   public decimal Price { get; set; }
   public string Description { get; set; } = string.Empty;
-  public IFormFile? ImageFile { get; set; } // Nullable byte array for image data
+  public IFormFile? ImageFile { get; set; }
+  public List<IFormFile> ProductiImagesChild { get; set; } = new List<IFormFile>();
   public int CategoryId { get; set; }
   public int ProductRating { get; set; } // Assuming ProductRating is an integer value
   public int NumberOfReviews { get; set; } // Assuming NumberOfReviews is an integer value
-  public string[] ProductFeatures { get; set; } = []; // Assuming ProductFeatures is a string containing features of the product
+  public List<string> ProductFeatures { get; set; } = []; // Assuming ProductFeatures is a string containing features of the product
   public string PrintType { get; set; } = string.Empty; // Assuming PrintType is a string representing the type of print (e.g., "3D", "2D", etc.)
   public string PaperQuality { get; set; } = string.Empty; // Assuming PaperQuality is a string representing the quality of paper used for printing
   public int TurnaroudnTime { get; set; }  // Assuming TurnaroundTime is a string representing the time taken for printing and delivery

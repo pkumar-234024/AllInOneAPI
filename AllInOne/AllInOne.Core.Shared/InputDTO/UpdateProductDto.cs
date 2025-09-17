@@ -7,7 +7,8 @@ public class UpdateProductDto{
   public string ProductName { get; set; } = string.Empty;
   public decimal Price { get; set; }
   public string Description { get; set; } = string.Empty;
-  public IFormFile? ImageFile { get; set; } // Nullable byte array for image data
+  public IFormFile? ImageFile { get; set; }
+  public List<IFormFile> ProductiImagesChild { get; set; } = new List<IFormFile>();
   public int CategoryId { get; set; }
   public int ProductRating { get; set; } // Assuming ProductRating is an integer value
   public int NumberOfReviews { get; set; } // Assuming NumberOfReviews is an integer value
