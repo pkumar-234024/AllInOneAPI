@@ -16,6 +16,7 @@ public class ProductService : IProductService
 {
   private readonly IRepository<Products> _productRepository;
   private IMapper _mapper;
+ 
   public ProductService(IRepository<Products> productRepository, IMapper mapper)
   {
     _productRepository = productRepository;
@@ -65,7 +66,21 @@ public class ProductService : IProductService
       {
         throw new Exception("Product not found");
       }
-      await _productRepository.DeleteAsync(result);
+
+      // Delete image from wwwroot if exists
+      if (!string.IsNullOrEmpty(result.ImagePath))
+      {
+        var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+        var filePath = Path.Combine(folderPath, result.ImageName);
+        if (File.Exists(filePath))
+        {
+          File.Delete(filePath);
+
+
+        }
+      }
+
+          await _productRepository.DeleteAsync(result);
       return true;
     }
     catch (Exception ex)

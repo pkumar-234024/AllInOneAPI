@@ -21,7 +21,13 @@ public class List : EndpointWithoutRequest<Result<List<ProductOutDto>>>
     var result = await _mediator.Send(new ListProductQuery());
     if (!result.IsSuccess)
     {
-      await SendNotFoundAsync(cancellationToken);
+      Response = Result.Error("Empty Product");
+      //if (result.Status.Equals("Error"))
+      //{
+      //  Response = Result.Error("Empty Product");
+      //}
+      //await SendNotFoundAsync(cancellationToken);
+
     }
     Response = result.Value;
   }

@@ -16,7 +16,7 @@ public class DeleteProductCommandHandler : ICommandHandler<DeleteProductCommand,
   public async Task<Result<bool>> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
   {
     var result = await _productService.DeleteProductAsync(request.id);
-    if(result)
+    if(!result)
     {
       return Result.Error("Failed to delete the product ");
     }
