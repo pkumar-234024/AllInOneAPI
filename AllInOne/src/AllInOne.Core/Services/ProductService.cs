@@ -134,6 +134,25 @@ public class ProductService : IProductService
     }
   }
 
+  public async Task<List<ProductOutDto>> GetAllProductsByIndexAsync(int index)
+  {
+    try
+    {
+      var productByIndexSpec = new Specification.GetProductByPagesIndexSpec(index, 10);
+      var result = await _productRepository.ListAsync(productByIndexSpec);
+      if (result == null || !result.Any())
+      {
+        throw new Exception("No products found");
+      }
+      var mappedResult = _mapper.Map<List<ProductOutDto>>(result);
+      return mappedResult;
+    }
+    catch (Exception ex)
+    {
+      throw new Exception($"Message : {ex.Message}, StackTrace : {ex.StackTrace}");
+    }
+  }
+
   public async Task<ProductOutDto> GetProductByIdAsync(int id)
   {
     try

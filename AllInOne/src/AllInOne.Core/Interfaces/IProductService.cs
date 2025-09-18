@@ -11,6 +11,7 @@ namespace AllInOne.Core.Interfaces;
 public interface IProductService
 {
   Task<List<ProductOutDto>> GetAllProductsAsync();
+  Task<List<ProductOutDto>> GetAllProductsByIndexAsync(int index);
   Task<ProductOutDto> GetProductByIdAsync(int id);
   Task<ProductOutDto> CreateProductAsync(CreatProductDto product);
   Task<ProductOutDto> UpdateProductAsync(UpdateProductDto product);
