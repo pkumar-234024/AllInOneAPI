@@ -13,6 +13,7 @@ public class UpdateProductDto{
   public int ProductRating { get; set; } // Assuming ProductRating is an integer value
   public int NumberOfReviews { get; set; } // Assuming NumberOfReviews is an integer value
   public string[] ProductFeatures { get; set; } = [];
+  public string? CommaSeperatedProductFeatures { get; set; }
   public string PrintType { get; set; } = string.Empty; // Assuming PrintType is a string representing the type of print (e.g., "3D", "2D", etc.)
   public string PaperQuality { get; set; } = string.Empty; // Assuming PaperQuality is a string representing the quality of paper used for printing
   public int TurnaroudnTime { get; set; }  // Assuming TurnaroundTime is a string representing the time taken for printing and delivery

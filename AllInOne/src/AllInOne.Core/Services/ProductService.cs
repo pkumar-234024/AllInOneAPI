@@ -138,7 +138,7 @@ public class ProductService : IProductService
   {
     try
     {
-      var productByIndexSpec = new Specification.GetProductByPagesIndexSpec(index, 10);
+      var productByIndexSpec = new Specification.GetProductByPagesIndexSpec(index, 3);
       var result = await _productRepository.ListAsync(productByIndexSpec);
       if (result == null || !result.Any())
       {
