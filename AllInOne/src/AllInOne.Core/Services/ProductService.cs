@@ -8,6 +8,7 @@ using AllInOne.Core.Interfaces;
 using AllInOne.Core.Models;
 using AllInOne.Core.Shared.InputDTO;
 using AllInOne.Core.Shared.OutputDTO;
+using AllInOne.Core.Specification;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -88,6 +89,31 @@ public class ProductService : IProductService
   {
     try
     {
+      //Child table delete
+      var spec = new GetProductImageByProductIdSpec(id);
+      var childResult = await _productImages.ListAsync(spec);
+      if (childResult == null)
+      {
+        throw new Exception("Product not found");
+      }
+
+      foreach(var data in childResult)
+      {
+        // Delete image from wwwroot if exists
+        if (!string.IsNullOrEmpty(data.ImageName))
+        {
+          var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "childImage");
+          var filePath = Path.Combine(folderPath, data.ImageName);
+          if (File.Exists(filePath))
+          {
+            File.Delete(filePath);
+          }
+        }
+
+        await _productImages.DeleteAsync(data);
+      }
+
+      //parent table delete
       var result = await _productRepository.GetByIdAsync(id);
       if (result == null)
       {
@@ -138,7 +164,7 @@ public class ProductService : IProductService
   {
     try
     {
-      var productByIndexSpec = new Specification.GetProductByPagesIndexSpec(index, 3);
+      var productByIndexSpec = new Specification.GetProductByPagesIndexSpec(index, 13);
       var result = await _productRepository.ListAsync(productByIndexSpec);
       if (result == null || !result.Any())
       {
